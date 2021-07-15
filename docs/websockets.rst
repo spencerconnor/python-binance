@@ -219,7 +219,7 @@ Create a socket combining multiple streams.
 
 These streams can include the depth, kline, ticker and trade streams but not the user stream which requires extra authentication.
 
-Symbols in socket name must be lowercase i.e bnbbtc@aggTrade, neobtc@ticker
+Symbols in socket name must be lowercase i.e bnbbtc\@aggTrade, neobtc\@ticker
 
 See the `Binance Websocket Streams API documentation <https://binance-docs.github.io/apidocs/spot/en/#websocket-market-streams>`_ for details on socket names.
 

@@ -136,11 +136,9 @@ Create the manager like so, passing an AsyncClient.
             while True:
                 res = await tscm.recv()
                 print(res)
-
         await client.close_connection()
 
     if __name__ == "__main__":
-
         loop = asyncio.get_event_loop()
         loop.run_until_complete(main())
 

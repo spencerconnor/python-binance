@@ -212,7 +212,7 @@ If the websocket is disconnected and is unable to reconnect a message is sent to
             # process message normally
 
 
-`Multiplex Socket <binance.html#binance.websockets.BinanceSocketManager.multiplex_socket>`_
+`Multiplex Socket <binance.html#binance.streams.BinanceSocketManager.multiplex_socket>`_
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Create a socket combining multiple streams.
@@ -228,7 +228,7 @@ See the `Binance Websocket Streams API documentation <https://binance-docs.githu
     # pass a list of stream names
     ms = bm.multiplex_socket(['bnbbtc@aggTrade', 'neobtc@ticker'])
 
-`Depth Socket <binance.html#binance.websockets.BinanceSocketManager.depth_socket>`_
+`Depth Socket <binance.html#binance.streams.BinanceSocketManager.depth_socket>`_
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Depth sockets have an optional depth parameter to receive partial book rather than a diff response.
@@ -244,7 +244,7 @@ Valid depth values are 5, 10 and 20 and `defined as enums <enums.html>`_.
     ds = bm.depth_socket('BNBBTC', depth=BinanceSocketManager.WEBSOCKET_DEPTH_5)
 
 
-`Kline Socket <binance.html#binance.websockets.BinanceSocketManager.kline_socket>`_
+`Kline Socket <binance.html#binance.streams.BinanceSocketManager.kline_socket>`_
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Kline sockets have an optional interval parameter. By default this is set to 1 minute.
@@ -256,7 +256,7 @@ Valid interval values are `defined as enums <enums.html>`_.
     ks = bm.kline_socket('BNBBTC', interval=KLINE_INTERVAL_30MINUTE)
 
 
-`Aggregated Trade Socket <binance.html#binance.websockets.BinanceSocketManager.aggtrade_socket>`_
+`Aggregated Trade Socket <binance.html#binance.streams.BinanceSocketManager.aggtrade_socket>`_
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code:: python
@@ -264,28 +264,28 @@ Valid interval values are `defined as enums <enums.html>`_.
     ats = bm.aggtrade_socket('BNBBTC')
 
 
-`Trade Socket <binance.html#binance.websockets.BinanceSocketManager.trade_socket>`_
+`Trade Socket <binance.html#binance.streams.BinanceSocketManager.trade_socket>`_
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code:: python
 
     ts = bm.trade_socket('BNBBTC')
 
-`Symbol Ticker Socket <binance.html#binance.websockets.BinanceSocketManager.symbol_ticker_socket>`_
+`Symbol Ticker Socket <binance.html#binance.streams.BinanceSocketManager.symbol_ticker_socket>`_
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code:: python
 
     sts = bm.symbol_ticker_socket('BNBBTC')
 
-`Ticker Socket <binance.html#binance.websockets.BinanceSocketManager.ticker_socket>`_
+`Ticker Socket <binance.html#binance.streams.BinanceSocketManager.ticker_socket>`_
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code:: python
 
     ts = bm.ticker_socket(process_message)
 
-`Mini Ticker Socket <binance.html#binance.websockets.BinanceSocketManager.miniticker_socket>`_
+`Mini Ticker Socket <binance.html#binance.streams.BinanceSocketManager.miniticker_socket>`_
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code:: python
@@ -310,7 +310,7 @@ The Manager handles keeping the socket alive.
 
 There are separate sockets for Spot, Cross-margin and separate Isolated margin accounts.
 
-`Spot trading <binance.html#binance.websockets.BinanceSocketManager.user_socket>`_
+`Spot trading <binance.html#binance.streams.BinanceSocketManager.user_socket>`_
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: python
@@ -318,7 +318,7 @@ There are separate sockets for Spot, Cross-margin and separate Isolated margin a
     bm.user_socket()
 
 
-`Cross-margin <binance.html#binance.websockets.BinanceSocketManager.margin_socket>`_
+`Cross-margin <binance.html#binance.streams.BinanceSocketManager.margin_socket>`_
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: python
@@ -326,7 +326,7 @@ There are separate sockets for Spot, Cross-margin and separate Isolated margin a
     bm.margin_socket()
 
 
-`Isolated margin <binance.html#binance.websockets.BinanceSocketManager.isolated_margin_socket>`_
+`Isolated margin <binance.html#binance.streams.BinanceSocketManager.isolated_margin_socket>`_
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: python
